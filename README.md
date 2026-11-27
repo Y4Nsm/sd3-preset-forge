@@ -2,14 +2,15 @@
 
 **English** | [Português (Brasil)](README.pt-BR.md)
 
-Open-source CLI and DSP calibration toolkit for **Toontrack Superior Drummer 3**. Author readable YAML drum-kit blueprints, compile them straight into native `.sd3p` presets, render test bounces through your local `Superior Drummer 3.vst3`, and audit pitch, decay, snare ring, and cymbal harshness.
+Open-source CLI, DSP calibrator, and MCP toolkit for **Toontrack Superior Drummer 3**. Build `.sd3p` presets from readable YAML **manually or automatically** via AI coding agents (**Claude Code, Cursor, Codex, Antigravity**), using AI strictly as a deterministic engineering tool on top of your own SD3 library with zero AI-generated audio.
 
+- **Manual or Agent-Driven Workflow:** Edit kit blueprints by hand like normal text configs, or connect an agent via CLI/MCP so it queries your installed kit pieces, compiles `.sd3p`, renders through your real `Superior Drummer 3.vst3`, and iterates against DSP targets automatically.
 - **Local Library Inventory (`sd3-forge inventory`):** Scans and filters your installed kit pieces, mics, stacks, keymaps, and all 35 native SD3 FX (`effect 10..44`) directly from your local installation.
 - **Typed IR v2 & Lossless `.sd3p` Compiler:** Validates Pydantic v2 blueprints (`schema_version: "2.0"`) and compiles losslessly into `.sd3p` presets.
 - **Persistent VST3 Worker & Analytical Calibrator:** Keeps `Superior Drummer 3.vst3` resident via `sd3-forge daemon`, verifies loaded slots with a pre-flight canary, and calibrates pitch + spectral/balance trims with `.forge-history/` auto-rollback (`sd3-forge calibrate`).
 - **Offline DSP Audit Engine (`dsp_metrics.py`):** Scores bounces across Schroeder EDC decay (with Lundeby-style noise-floor cutoff), fundamental pitch, snare/tom ring peaks, per-cymbal harshness, tom pitch/pan ordering, and ITU-R BS.1770-4 loudness (`test-report.json`, `test-report.md`, `diagnostic-plots.png`).
 - **Included Core Library Examples:** Ready-to-compile internal-mixer kits under `presets/` (Deftones *Around the Fur* and Alice In Chains *Facelift*). No AI audio generation and no Toontrack samples included.
-- See [docs/ROADMAP.md](docs/ROADMAP.md) for the full architecture, or [AGENTS.md](AGENTS.md) if driving the CLI from optional coding agents / MCP.
+- See [AGENTS.md](AGENTS.md) for the agent workflow and [docs/ROADMAP.md](docs/ROADMAP.md) for the full architecture.
 
 ---
 

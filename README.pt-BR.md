@@ -2,14 +2,15 @@
 
 [English](README.md) | **Português (Brasil)**
 
-Ferramenta CLI open-source e motor de calibração DSP para o **Toontrack Superior Drummer 3**. Escreva blueprints legíveis em YAML, compile direto em presets nativos `.sd3p`, renderize bounces de teste usando seu `Superior Drummer 3.vst3` local e audite afinação, decaimento, ring de caixa e harshness de pratos.
+Ferramenta CLI open-source, calibrador DSP e servidor MCP para o **Toontrack Superior Drummer 3**. Crie presets `.sd3p` a partir de YAML **manualmente ou de forma automática** com agentes de código (**Claude Code, Cursor, Codex, Antigravity**), usando a IA estritamente como ferramenta determinística de engenharia sobre a sua própria biblioteca do SD3, sem geração de áudio por IA.
 
+- **Fluxo Manual ou Automatizado por Agente:** Edite os blueprints na mão como arquivos de texto comuns, ou conecte um agente via CLI/MCP para consultar suas peças instaladas, compilar `.sd3p`, renderizar no seu `Superior Drummer 3.vst3` real e iterar automaticamente contra metas de DSP.
 - **Inventário da Biblioteca Local (`sd3-forge inventory`):** Escaneia e filtra peças de bateria, microfones instalados, stacks, keymaps e todos os 35 efeitos nativos do SD3 (`effect 10..44`) diretamente da sua instalação local.
 - **Typed IR v2 e Compilador `.sd3p` Sem Perdas:** Valida blueprints Pydantic v2 (`schema_version: "2.0"`) e compila diretamente em presets nativos `.sd3p`.
 - **Worker VST3 Persistente e Calibrador Analítico:** Mantém `Superior Drummer 3.vst3` residente via `sd3-forge daemon`, verifica os slots carregados com canário pré-voo e calibra afinação + cortes/balanço espectral com rollback automático via `.forge-history/` (`sd3-forge calibrate`).
 - **Motor de Auditoria DSP Offline (`dsp_metrics.py`):** Audita bounces com decaimento Schroeder EDC (com corte de piso de ruído estilo Lundeby), frequência fundamental, picos de ring de caixa/tons, harshness por prato, ordem de pitch/pan dos tons e loudness ITU-R BS.1770-4 (`test-report.json`, `test-report.md`, `diagnostic-plots.png`).
 - **Exemplos da Core Library Incluídos:** Kits prontos usando apenas o mixer interno do SD3 em `presets/` (Deftones *Around the Fur* e Alice In Chains *Facelift*). Sem geração de áudio por IA e sem nenhum sample da Toontrack.
-- Consulte [docs/ROADMAP.md](docs/ROADMAP.md) para a arquitetura completa, ou [AGENTS.md](AGENTS.md) caso queira acionar o CLI opcionalmente via agentes de código / MCP.
+- Consulte [AGENTS.md](AGENTS.md) para o fluxo com agentes e [docs/ROADMAP.md](docs/ROADMAP.md) para a arquitetura completa.
 
 ---
 
