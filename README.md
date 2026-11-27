@@ -1,5 +1,7 @@
 # SD3 Preset Forge
 
+**English** | [Português (Brasil)](README.pt-BR.md)
+
 Deterministic, TDD-driven preset engineering forge for **Toontrack Superior Drummer 3**, built for autonomous AI coding agents (**Claude Code, Cursor, Codex, Antigravity**) and human mix engineers.
 
 - **Compact Ground Truth Querying (`sd3-forge inventory`):** Extracts and filters local kit pieces, installed mics, stacks, keymaps, and all 35 native FX (`effect 10..44`) without bloating agent context.
