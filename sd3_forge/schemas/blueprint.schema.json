@@ -1,0 +1,173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SD3 Preset Forge Blueprint Schema",
+  "type": "object",
+  "required": ["metadata", "mix_mode", "kit", "mics", "bleed", "buses", "master_bus"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["preset_id", "genre", "reference"],
+      "properties": {
+        "preset_id": { "type": "string" },
+        "genre": { "type": "string" },
+        "reference": { "type": "string" }
+      }
+    },
+    "mix_mode": { "type": "string", "enum": ["internal_sd3", "multi_out"] },
+    "preflight_audit": {
+      "type": "object",
+      "required": [
+        "envelope_ahdsr_checked",
+        "fx_bands_checked",
+        "unused_slots_resolved",
+        "part1_mics_only",
+        "raw_baseline_planned"
+      ],
+      "properties": {
+        "envelope_ahdsr_checked": { "type": "boolean" },
+        "fx_bands_checked": { "type": "boolean" },
+        "unused_slots_resolved": { "type": "boolean" },
+        "part1_mics_only": { "type": "boolean" },
+        "raw_baseline_planned": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "kit": {
+      "type": "object",
+      "required": ["base_kit", "pieces"],
+      "properties": {
+        "base_kit": { "type": "string" },
+        "unload_slots": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "pieces": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["slot", "name"],
+            "properties": {
+              "slot": { "type": "string" },
+              "name": { "type": "string" },
+              "pitch_semitones": { "type": "number", "minimum": -12, "maximum": 12 },
+              "envelope": {
+                "type": "object",
+                "properties": {
+                  "attack_ms": { "type": "number", "minimum": 0 },
+                  "hold_ms": { "type": "number", "minimum": 0 },
+                  "decay_ms": { "type": "number", "minimum": 0 },
+                  "sustain_db": { "type": "number", "maximum": 0 },
+                  "release_ms": { "type": "number", "minimum": 0 }
+                },
+                "additionalProperties": false
+              },
+              "stacks": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["category", "name"],
+                  "properties": {
+                    "category": { "type": "string" },
+                    "name": { "type": "string" },
+                    "level_db": { "type": "number" },
+                    "pitch_semitones": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mics": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["channel", "fader_db", "inserts"],
+        "properties": {
+          "channel": { "type": "string" },
+          "fader_db": { "type": "number" },
+          "pan": { "type": "string" },
+          "phase_invert": { "type": "boolean" },
+          "route_to": { "type": "string" },
+          "sends": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["bus", "level_db"],
+              "properties": {
+                "bus": { "type": "string" },
+                "level_db": { "type": "number" }
+              }
+            }
+          },
+          "inserts": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/insertFx" }
+          }
+        }
+      }
+    },
+    "bleed": {
+      "type": "object",
+      "required": ["channels"],
+      "properties": {
+        "channels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["channel", "enabled", "sources"],
+            "properties": {
+              "channel": { "type": "string" },
+              "enabled": { "type": "boolean" },
+              "level_db": { "type": "number" },
+              "sources": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "buses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "fader_db", "inserts"],
+        "properties": {
+          "name": { "type": "string" },
+          "fader_db": { "type": "number" },
+          "route_to": { "type": "string" },
+          "sends": { "type": "array" },
+          "inserts": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/insertFx" }
+          }
+        }
+      }
+    },
+    "master_bus": {
+      "type": "object",
+      "required": ["channel", "fader_db", "inserts"],
+      "properties": {
+        "channel": { "type": "string" },
+        "fader_db": { "type": "number" },
+        "inserts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/insertFx" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "insertFx": {
+      "type": "object",
+      "required": ["fx", "params"],
+      "properties": {
+        "fx": { "type": "string" },
+        "purpose": { "type": "string" },
+        "params": { "type": "object" }
+      }
+    }
+  }
+}

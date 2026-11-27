@@ -1,0 +1,23 @@
+HEADER_BYTES_PADDING
+positions {
+  KickStack 1 {
+    description "Kicks"
+    st_k1 SP01 "Synthetic Sub Kick"
+  }
+  SnareStack 2 {
+    description "Snares"
+    st_s1 SP02 "Synthetic Clap Stack"
+  }
+  ClapStack 3 {
+    description "Claps"
+    st_c1 SP03 "Synthetic 808 Clap"
+  }
+  PercStack 4 {
+    description "Percussion"
+    st_p1 SP04 "Synthetic Tamb"
+  }
+  SFXStack 5 {
+    description "Effects"
+    st_x1 SP05 "Synthetic Riser"
+  }
+}

@@ -1,0 +1,9 @@
+Product "Synth Rock SDX"
+Id SL-SYNTH_ROCK_SDX
+
+name "Shaker Pad"
+{
+  prio 1
+  note 2
+  note 4
+}

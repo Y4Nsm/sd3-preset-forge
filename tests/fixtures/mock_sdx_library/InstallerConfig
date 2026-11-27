@@ -1,0 +1,12 @@
+TEMPLATE OBW-File
+  File {
+    FileName "SL-SYNTH_ROCK_SDX/Sounds/soundb$1.obw"
+  }
+END
+
+Option {
+  Name "Core SDX"
+  DefaultOption
+  USE OBW-File 1
+  USE OBW-File 2
+}

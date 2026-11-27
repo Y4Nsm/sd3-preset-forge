@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+
+# User-generated / proprietary runtime artifacts (never commit)
+*.sd3p
+*.wav
+presets/**/diagnostic-plots.png
+presets/**/test-report.json
+presets/**/test-report.md
+presets/**/.forge-history/
+docs/sd3-ground-truth/inventory.json
+forge.config.json
+!presets/**/bounces/.gitkeep

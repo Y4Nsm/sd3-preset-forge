@@ -1,0 +1,221 @@
+metadata:
+  preset_id: "{{PRESET_ID}}"
+  genre: "{{GENRE}}"
+  reference_artist: "Artist Name"
+  reference_album: "Album Name (Year)"
+  mix_mode: "internal_sd3"
+  schema_version: "2.0"
+  max_warnings: 1
+
+safety:
+  true_peak_dbfs:
+    min: -12.0
+    max: -0.5
+    ideal: -1.5
+    unit: "dBFS"
+    severity: "hard"
+    hint_low: "Subir fader master ou makeup gain para evitar bounce baixo demais."
+    hint_high: "Reduzir Output 1/2 ou engajar Compressor / Limiter para evitar clipping."
+  clipping_samples:
+    min: 0
+    max: 0
+    ideal: 0
+    unit: "samples"
+    severity: "hard"
+    hint_high: "Baixar ganho de saída no Output 1/2 do mixer do SD3."
+  lr_balance_db:
+    min: -1.5
+    max: 1.5
+    ideal: 0.0
+    unit: "dB"
+    severity: "hard"
+    hint_low: "Lado direito mais alto; revisar pans de OH/Pratos/Toms."
+    hint_high: "Lado esquerdo mais alto; revisar pans de OH/Pratos/Toms."
+  kick_stereo_correlation:
+    min: 0.80
+    max: 1.0
+    ideal: 0.96
+    unit: "r"
+    severity: "hard"
+    hint_low: "Kick com abertura excessiva ou fase invertida entre Kick In/Out/Sub."
+  snare_stereo_correlation:
+    min: 0.55
+    max: 1.0
+    ideal: 0.82
+    unit: "r"
+    severity: "hard"
+    hint_low: "Checar fase entre Snare Top/Bottom e largura do Room Reverb."
+  groove_stereo_correlation:
+    min: 0.25
+    max: 0.90
+    ideal: 0.65
+    unit: "r"
+    severity: "hard"
+    hint_low: "Risco de cancelamento de fase em mono."
+
+kick:
+  fundamental_hz:
+    min: 48.0
+    max: 68.0
+    ideal: 58.0
+    unit: "Hz"
+    severity: "hard"
+  sub_30_70_db:
+    min: -9.0
+    max: -1.0
+    ideal: -3.5
+    unit: "dB"
+    severity: "hard"
+  punch_70_130_db:
+    min: -12.0
+    max: -2.0
+    ideal: -5.5
+    unit: "dB"
+    severity: "warn"
+  boxiness_250_550_db:
+    min: -35.0
+    max: -11.0
+    ideal: -18.0
+    unit: "dB"
+    severity: "warn"
+  click_3000_6000_db:
+    min: -26.0
+    max: -8.0
+    ideal: -14.0
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 21.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+  decay_t20_ms:
+    min: 80.0
+    max: 350.0
+    ideal: 180.0
+    unit: "ms"
+    severity: "warn"
+
+snare_center:
+  fundamental_hz:
+    min: 170.0
+    max: 235.0
+    ideal: 200.0
+    unit: "Hz"
+    severity: "hard"
+  ring_prominence_db:
+    min: 2.0
+    max: 18.0
+    ideal: 10.0
+    unit: "dB"
+    severity: "warn"
+  crack_2000_5000_db:
+    min: -20.0
+    max: -4.0
+    ideal: -10.0
+    unit: "dB"
+    severity: "warn"
+  wire_sizzle_7000_14000_db:
+    min: -28.0
+    max: -7.0
+    ideal: -15.0
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.5
+    unit: "dB"
+    severity: "hard"
+  decay_t30_ms:
+    min: 140.0
+    max: 650.0
+    ideal: 320.0
+    unit: "ms"
+    severity: "warn"
+
+snare_rimshot:
+  fundamental_hz:
+    min: 170.0
+    max: 240.0
+    ideal: 205.0
+    unit: "Hz"
+    severity: "hard"
+  ring_prominence_db:
+    min: 2.0
+    max: 19.0
+    ideal: 11.0
+    unit: "dB"
+    severity: "warn"
+  crack_2000_5000_db:
+    min: -18.0
+    max: -3.0
+    ideal: -9.0
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+
+toms:
+  pitch_order_valid:
+    ideal: true
+    unit: "bool"
+    severity: "hard"
+    hint_low: "Ajustar Pitch dos toms para manter RT1 > RT2 > FT1 > FT2."
+
+cymbals:
+  harshness_ratio_db:
+    min: -12.0
+    max: 3.5
+    ideal: -3.0
+    unit: "dB"
+    severity: "warn"
+  cymbals_stereo_width:
+    min: 0.25
+    max: 1.30
+    ideal: 0.75
+    unit: "width"
+    severity: "warn"
+
+groove:
+  sub_20_60_db:
+    min: -22.0
+    max: -4.0
+    ideal: -10.0
+    unit: "dB"
+    severity: "warn"
+  low_60_150_db:
+    min: -16.0
+    max: -3.0
+    ideal: -7.5
+    unit: "dB"
+    severity: "warn"
+  low_mid_150_500_db:
+    min: -20.0
+    max: -6.0
+    ideal: -11.5
+    unit: "dB"
+    severity: "warn"
+  high_mid_2000_6000_db:
+    min: -22.0
+    max: -6.0
+    ideal: -12.0
+    unit: "dB"
+    severity: "warn"
+  groove_crest_factor_db:
+    min: 7.5
+    max: 19.0
+    ideal: 12.0
+    unit: "dB"
+    severity: "hard"
+  kick_to_snare_peak_diff_db:
+    min: -4.5
+    max: 4.5
+    ideal: 0.0
+    unit: "dB"
+    severity: "warn"

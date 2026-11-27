@@ -1,0 +1,319 @@
+metadata:
+  preset_id: "deftones-around-the-fur"
+  genre: "nu-metal"
+  reference_artist: "Deftones (Abe Cunningham / Terry Date)"
+  reference_album: "Around the Fur (1997) / White Pony (2000)"
+  mix_mode: "internal_sd3"
+  schema_version: "2.0"
+  max_warnings: 1
+
+safety:
+  true_peak_dbfs:
+    min: -10.0
+    max: -0.5
+    ideal: -1.5
+    unit: "dBFS"
+    severity: "hard"
+    hint_low: "Subir Output 1/2 ou makeup gain do Comp 670."
+    hint_high: "Baixar Output 1/2 ou ajustar Compressor / Limiter para evitar clipping."
+  clipping_samples:
+    min: 0
+    max: 0
+    ideal: 0
+    unit: "samples"
+    severity: "hard"
+    hint_high: "Reduzir ganho no Output 1/2."
+  lr_balance_db:
+    min: -1.5
+    max: 1.5
+    ideal: 0.0
+    unit: "dB"
+    severity: "hard"
+    hint_low: "Canal direito mais alto; revisar pans de OH Dyn e pratos."
+    hint_high: "Canal esquerdo mais alto; revisar pans de OH Dyn e pratos."
+  kick_stereo_correlation:
+    min: 0.80
+    max: 1.0
+    ideal: 0.96
+    unit: "r"
+    severity: "hard"
+    hint_low: "Verificar fase entre Kick In, Kick Out e Kick Sub."
+  snare_stereo_correlation:
+    min: 0.55
+    max: 1.0
+    ideal: 0.80
+    unit: "r"
+    severity: "hard"
+    hint_low: "Verificar inversão de fase em Snare Bottom e largura do Room Bus."
+  groove_stereo_correlation:
+    min: 0.25
+    max: 0.90
+    ideal: 0.62
+    unit: "r"
+    severity: "hard"
+    hint_low: "Risco de cancelamento em mono; reduzir abertura artificial."
+
+kick:
+  fundamental_hz:
+    min: 50.0
+    max: 66.0
+    ideal: 58.0
+    unit: "Hz"
+    severity: "hard"
+    hint_low: "Subir Pitch do KickR na aba Drums."
+    hint_high: "Descer Pitch do KickR ou reforçar 55-60 Hz no EQ do Kick Bus."
+  sub_30_70_db:
+    min: -9.5
+    max: -1.0
+    ideal: -3.5
+    unit: "dB"
+    severity: "hard"
+    hint_low: "Subir fader de Kick Sub ou boost de 58 Hz no Kick Bus."
+    hint_high: "Reduzir Kick Sub ou aplicar HPF em 32 Hz no Kick Bus."
+  punch_70_130_db:
+    min: -12.0
+    max: -2.0
+    ideal: -5.5
+    unit: "dB"
+    severity: "warn"
+    hint_low: "Subir Kick Out ou dar leve boost em 95 Hz."
+    hint_high: "Atenuar 90-110 Hz no Kick Out."
+  boxiness_250_550_db:
+    min: -38.0
+    max: -11.0
+    ideal: -19.0
+    unit: "dB"
+    severity: "warn"
+    hint_high: "Cortar mais 320-420 Hz no Kick In e Kick Out (som encaixotado)."
+  click_3000_6000_db:
+    min: -26.0
+    max: -8.0
+    ideal: -14.5
+    unit: "dB"
+    severity: "warn"
+    hint_low: "Aumentar Attack no Transient do Kick In ou boost em 4.2 kHz."
+    hint_high: "Suavizar boost de 4 kHz no Kick In."
+  crest_factor_db:
+    min: 9.0
+    max: 21.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+    hint_low: "Compressão excessiva no Kick Bus; abrir Attack do Comp 76."
+  active_crest_factor_db:
+    min: 9.0
+    max: 20.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+  decay_t20_ms:
+    min: 140.0
+    max: 480.0
+    ideal: 280.0
+    unit: "ms"
+    severity: "warn"
+    hint_high: "Reduzir Sustain do KickR ou apertar Gate/Decay do Kick Out."
+  drr_db:
+    min: 2.0
+    max: 14.0
+    ideal: 6.5
+    unit: "dB"
+    severity: "warn"
+  double_kick_clarity_db:
+    min: 6.0
+    max: 24.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+  velocity_dynamic_range_db:
+    min: 4.0
+    max: 18.0
+    ideal: 7.0
+    unit: "dB"
+    severity: "warn"
+
+snare_center:
+  fundamental_hz:
+    min: 205.0
+    max: 245.0
+    ideal: 225.0
+    unit: "Hz"
+    severity: "hard"
+    hint_low: "Caixa grave demais para Abe Cunningham; subir Pitch da Snare."
+    hint_high: "Caixa aguda demais; descer Pitch da Snare."
+  ring_prominence_db:
+    min: 3.0
+    max: 17.5
+    ideal: 10.5
+    unit: "dB"
+    severity: "warn"
+    hint_high: "Ring metálico excessivo; aplicar corte estreito (Q=6) em 430-550 Hz no Snare Top."
+  crack_2000_5000_db:
+    min: -19.0
+    max: -3.5
+    ideal: -9.5
+    unit: "dB"
+    severity: "warn"
+    hint_low: "Dar +2 dB em 3.2 kHz no EQ84 do Snare Top ou aumentar Attack no Transient."
+  wire_sizzle_7000_14000_db:
+    min: -28.0
+    max: -7.0
+    ideal: -14.5
+    unit: "dB"
+    severity: "warn"
+    hint_low: "Subir fader de Snare Bottom ou High Shelf 10 kHz no Snare Bus."
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+    hint_low: "Caixa esmagada; abrir Attack do Comp 76 ou reduzir Parallel Slam."
+  active_crest_factor_db:
+    min: 9.0
+    max: 21.0
+    ideal: 16.0
+    unit: "dB"
+    severity: "hard"
+  decay_t30_ms:
+    min: 220.0
+    max: 760.0
+    ideal: 480.0
+    unit: "ms"
+    severity: "warn"
+    hint_low: "Aumentar Send da Snare para Studio Litho Room Bus ou Amb Ribbon."
+    hint_high: "Reduzir Decay do Room Reverb ou Send da caixa."
+  drr_db:
+    min: -2.0
+    max: 10.0
+    ideal: 2.0
+    unit: "dB"
+    severity: "warn"
+  velocity_dynamic_range_db:
+    min: 4.0
+    max: 18.0
+    ideal: 6.5
+    unit: "dB"
+    severity: "warn"
+
+snare_rimshot:
+  fundamental_hz:
+    min: 205.0
+    max: 250.0
+    ideal: 228.0
+    unit: "Hz"
+    severity: "hard"
+    hint_low: "Subir Pitch da Snare."
+    hint_high: "Descer Pitch da Snare."
+  ring_prominence_db:
+    min: 3.5
+    max: 18.5
+    ideal: 11.5
+    unit: "dB"
+    severity: "warn"
+    hint_high: "Suavizar ressonância em 450-580 Hz no Snare Bus."
+  crack_2000_5000_db:
+    min: -17.0
+    max: -2.5
+    ideal: -8.5
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.0
+    unit: "dB"
+    severity: "hard"
+
+toms:
+  pitch_order_valid:
+    ideal: true
+    unit: "bool"
+    severity: "hard"
+    hint_low: "Corrigir Pitch dos toms (RT1 > RT2 > FT1 > FT2)."
+  pan_order_valid:
+    ideal: true
+    unit: "bool"
+    severity: "hard"
+    hint_low: "Corrigir Pan dos toms (esquerda para direita)."
+
+cymbals:
+  harshness_ratio_db:
+    min: -12.0
+    max: 3.0
+    ideal: -2.5
+    unit: "dB"
+    severity: "warn"
+    hint_high: "Pratos ardidos em 3-6 kHz; atenuar 4.2 kHz no OH Dyn."
+  cymbals_stereo_width:
+    min: 0.30
+    max: 1.35
+    ideal: 0.80
+    unit: "width"
+    severity: "warn"
+  choke_attenuation_db:
+    min: 6.0
+    max: 35.0
+    ideal: 12.0
+    unit: "dB"
+    severity: "warn"
+
+groove:
+  sub_20_60_db:
+    min: -20.0
+    max: -4.0
+    ideal: -9.5
+    unit: "dB"
+    severity: "warn"
+  low_60_150_db:
+    min: -15.0
+    max: -3.0
+    ideal: -7.0
+    unit: "dB"
+    severity: "warn"
+  low_mid_150_500_db:
+    min: -20.0
+    max: -6.5
+    ideal: -11.5
+    unit: "dB"
+    severity: "warn"
+    hint_high: "Excesso de lama em 200-400 Hz; limpar no EQ do Output 1/2 ou Parallel Slam."
+  high_mid_2000_6000_db:
+    min: -20.0
+    max: -5.5
+    ideal: -11.0
+    unit: "dB"
+    severity: "warn"
+  groove_crest_factor_db:
+    min: 7.5
+    max: 19.0
+    ideal: 11.5
+    unit: "dB"
+    severity: "hard"
+    hint_low: "Bus muito comprimido; reduzir Parallel Slam ou Comp 670."
+  active_crest_factor_db:
+    min: 7.5
+    max: 19.0
+    ideal: 13.0
+    unit: "dB"
+    severity: "hard"
+  integrated_lufs:
+    min: -25.0
+    max: -12.0
+    ideal: -19.5
+    unit: "LUFS"
+    severity: "warn"
+  lra_lu:
+    min: 1.0
+    max: 8.0
+    ideal: 3.0
+    unit: "LU"
+    severity: "warn"
+  kick_to_snare_peak_diff_db:
+    min: -4.5
+    max: 4.5
+    ideal: -0.5
+    unit: "dB"
+    severity: "warn"
+    hint_low: "Snare muito mais alta que o Kick; subir Kick Bus ou baixar Snare Bus."
+    hint_high: "Kick muito mais alto que a Snare; subir Snare Bus."

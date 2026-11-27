@@ -1,0 +1,94 @@
+mic {
+  name Kick-In
+  mixname "Kick In"
+  bouncename "Kick In"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Kick-Out
+  mixname "Kick Out"
+  bouncename "Kick Out"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Kick-Sub
+  mixname "Kick Sub"
+  bouncename "Kick Sub"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name SnareTop
+  mixname "Snare Top"
+  bouncename "Snare Top"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name SnareBottom
+  mixname "Snare Bottom"
+  bouncename "Snare Bottom"
+  pan 0.0
+  volume 1.0
+  stereo
+}
+mic {
+  name Hats
+  mixname "Hi-Hat"
+  bouncename "Hi-Hat"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Tom1
+  mixname "Racktom 1"
+  bouncename "Racktom 1"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Tom2
+  mixname "Racktom 2"
+  bouncename "Racktom 2"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Tom3
+  mixname "Racktom 3"
+  bouncename "Racktom 3"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Tom4
+  mixname "Floortom 1"
+  bouncename "Floortom 1"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Tom5
+  mixname "Floortom 2"
+  bouncename "Floortom 2"
+  pan 0.5
+  volume 1.0
+}
+mic {
+  name Oh-Beyer
+  mixname "OH Dyn"
+  bouncename "OH Dyn"
+  pan 0.0
+  volume 1.0
+  stereo
+}
+mic {
+  name Ambience-R88
+  mixname "Amb Ribbon"
+  bouncename "Amb Ribbon"
+  pan 0.0
+  volume 1.0
+  stereo
+}

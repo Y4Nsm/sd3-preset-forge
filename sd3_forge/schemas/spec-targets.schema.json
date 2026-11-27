@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SD3 Preset Forge Spec Targets Contract",
+  "type": "object",
+  "required": ["metadata", "safety", "kick", "snare_center", "snare_rimshot", "toms", "cymbals", "groove"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["preset_id", "genre", "reference_artist", "reference_album", "mix_mode"],
+      "properties": {
+        "preset_id": { "type": "string", "minLength": 2 },
+        "genre": { "type": "string", "minLength": 2 },
+        "reference_artist": { "type": "string", "minLength": 2 },
+        "reference_album": { "type": "string", "minLength": 2 },
+        "mix_mode": { "type": "string", "enum": ["internal_sd3", "multi_out"] },
+        "schema_version": { "type": "string" },
+        "max_warnings": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "safety": { "$ref": "#/$defs/metricGroup" },
+    "kick": { "$ref": "#/$defs/metricGroup" },
+    "snare_center": { "$ref": "#/$defs/metricGroup" },
+    "snare_rimshot": { "$ref": "#/$defs/metricGroup" },
+    "toms": { "$ref": "#/$defs/metricGroup" },
+    "cymbals": { "$ref": "#/$defs/metricGroup" },
+    "groove": { "$ref": "#/$defs/metricGroup" }
+  },
+  "$defs": {
+    "metricBound": {
+      "type": "object",
+      "required": ["unit", "severity"],
+      "properties": {
+        "min": { "type": ["number", "boolean"] },
+        "max": { "type": ["number", "boolean"] },
+        "ideal": { "type": ["number", "boolean"] },
+        "unit": { "type": "string" },
+        "severity": { "type": "string", "enum": ["hard", "warn"] },
+        "hint_low": { "type": "string" },
+        "hint_high": { "type": "string" }
+      }
+    },
+    "metricGroup": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": { "$ref": "#/$defs/metricBound" }
+    }
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "schema_version": "2.0.0",
+  "scope": "full",
+  "bpm": 120,
+  "ppq": 480,
+  "total_bars": 54,
+  "total_seconds": 108.0,
+  "midi_channel_1based": 10,
+  "windows": {
+    "kick_isolated": {
+      "note": 36,
+      "hit_times_s": [
+        0.0,
+        2.0,
+        4.0,
+        6.0
+      ],
+      "velocities": [
+        122,
+        126,
+        127,
+        120
+      ],
+      "window_ms": [
+        0.0,
+        600.0
+      ]
+    },
+    "kick_velocity_ladder": {
+      "note": 36,
+      "hit_times_s": [
+        8.0,
+        9.5,
+        11.0,
+        12.5
+      ],
+      "velocities": [
+        35,
+        65,
+        95,
+        125
+      ],
+      "window_ms": [
+        0.0,
+        500.0
+      ]
+    },
+    "double_kick_burst": {
+      "note": 36,
+      "hit_times_s": [
+        14.0,
+        14.125,
+        14.25,
+        14.375,
+        14.5,
+        14.625,
+        14.75,
+        14.875
+      ],
+      "velocities": [
+        124,
+        120,
+        125,
+        121,
+        126,
+        120,
+        125,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        1200.0
+      ]
+    },
+    "snare_center_isolated": {
+      "note": 38,
+      "hit_times_s": [
+        16.0,
+        18.0,
+        20.0,
+        22.0
+      ],
+      "velocities": [
+        122,
+        126,
+        127,
+        120
+      ],
+      "window_ms": [
+        0.0,
+        600.0
+      ]
+    },
+    "snare_rimshot_isolated": {
+      "note": 40,
+      "hit_times_s": [
+        24.0,
+        26.0,
+        28.0,
+        30.0
+      ],
+      "velocities": [
+        122,
+        126,
+        127,
+        120
+      ],
+      "window_ms": [
+        0.0,
+        600.0
+      ]
+    },
+    "snare_velocity_ladder": {
+      "note": 38,
+      "hit_times_s": [
+        32.0,
+        33.5,
+        35.0,
+        36.5
+      ],
+      "velocities": [
+        35,
+        65,
+        95,
+        125
+      ],
+      "window_ms": [
+        0.0,
+        550.0
+      ]
+    },
+    "snare_flam_isolated": {
+      "note": 69,
+      "hit_times_s": [
+        38.0,
+        40.0
+      ],
+      "velocities": [
+        122,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        600.0
+      ]
+    },
+    "racktom1_isolated": {
+      "note": 48,
+      "hit_times_s": [
+        42.0,
+        44.0
+      ],
+      "velocities": [
+        124,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        650.0
+      ]
+    },
+    "racktom2_isolated": {
+      "note": 47,
+      "hit_times_s": [
+        46.0,
+        48.0
+      ],
+      "velocities": [
+        124,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        650.0
+      ]
+    },
+    "racktom3_isolated": {
+      "note": 45,
+      "hit_times_s": [
+        50.0,
+        52.0
+      ],
+      "velocities": [
+        124,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        650.0
+      ]
+    },
+    "floortom1_isolated": {
+      "note": 43,
+      "hit_times_s": [
+        54.0,
+        56.0
+      ],
+      "velocities": [
+        124,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        750.0
+      ]
+    },
+    "floortom2_isolated": {
+      "note": 41,
+      "hit_times_s": [
+        58.0,
+        60.0
+      ],
+      "velocities": [
+        124,
+        122
+      ],
+      "window_ms": [
+        0.0,
+        800.0
+      ]
+    },
+    "hihat_isolated": {
+      "notes": [
+        42,
+        46,
+        44
+      ],
+      "closed_times_s": [
+        62.0,
+        63.0
+      ],
+      "open_times_s": [
+        64.0,
+        65.0
+      ],
+      "pedal_times_s": [
+        66.0
+      ],
+      "window_ms": [
+        0.0,
+        600.0
+      ]
+    },
+    "cymbals_isolated": {
+      "notes": [
+        86,
+        49,
+        55,
+        51,
+        53,
+        52
+      ],
+      "hit_times_s": [
+        68.0,
+        70.0,
+        72.0,
+        74.0,
+        75.5,
+        77.0
+      ],
+      "window_ms": [
+        0.0,
+        800.0
+      ],
+      "per_cymbal": {
+        "crash1": {
+          "note": 86,
+          "hit_times_s": [
+            68.0
+          ],
+          "window_ms": [
+            0.0,
+            800.0
+          ]
+        },
+        "crash2": {
+          "note": 49,
+          "hit_times_s": [
+            70.0
+          ],
+          "window_ms": [
+            0.0,
+            800.0
+          ]
+        },
+        "splash": {
+          "note": 55,
+          "hit_times_s": [
+            72.0
+          ],
+          "window_ms": [
+            0.0,
+            800.0
+          ]
+        },
+        "ride_bow": {
+          "note": 51,
+          "hit_times_s": [
+            74.0
+          ],
+          "window_ms": [
+            0.0,
+            800.0
+          ]
+        },
+        "ride_bell": {
+          "note": 53,
+          "hit_times_s": [
+            75.5
+          ],
+          "window_ms": [
+            0.0,
+            800.0
+          ]
+        },
+        "crash5": {
+          "note": 52,
+          "hit_times_s": [
+            77.0
+          ],
+          "window_ms": [
+            0.0,
+            800.0
+          ]
+        }
+      }
+    },
+    "cymbal_choke": {
+      "hit_note": 49,
+      "choke_note": 50,
+      "hit_time_s": 79.0,
+      "choke_time_s": 79.4,
+      "window_ms": [
+        0.0,
+        1000.0
+      ]
+    },
+    "bleed_stress": {
+      "start_s": 84.0,
+      "end_s": 88.0
+    },
+    "groove_all": {
+      "start_s": 88.0,
+      "end_s": 104.0
+    },
+    "groove_heavy": {
+      "start_s": 88.0,
+      "end_s": 96.0
+    },
+    "groove_dynamic_fill": {
+      "start_s": 96.0,
+      "end_s": 104.0
+    },
+    "tail_release": {
+      "start_s": 104.0,
+      "end_s": 108.0
+    }
+  },
+  "event_count": 189
+}

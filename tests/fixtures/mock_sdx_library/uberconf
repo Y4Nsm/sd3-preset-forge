@@ -1,0 +1,41 @@
+# uberconf synthetic SDX
+TEMPLATE StdCrash
+  close OH-Wide
+  pads {
+    crash$1 CR_R "Crash"
+    crash$1CS CS_R "Crescendo"
+  }
+END
+
+positions {
+  Kick 1 {
+    description "Kick"
+    close Kick-Sub
+    KD1 KD01 "24x14^ Custom Maple"
+  }
+  Snare 2 {
+    description "Snare"
+    close SnareTop
+    SD1 SD01 "6.5x14^ Bronze"
+  }
+  Hats 3 {
+    description "Hi-Hat"
+    close OH-Wide
+    HA1 HA01 "15^ Sound Edge"
+  }
+  Cymbal1 4 {
+    description "Cymbal 1"
+    USE StdCrash 1
+    CY1 CR01 "19^ Medium Crash"
+  }
+}
+
+drumsets {
+  "Synth Rock Kit" {
+    sticks "Drumsticks"
+    Kick KD1
+    Snare SD1
+    Hats HA1
+    Cymbal1 CY1
+  }
+}

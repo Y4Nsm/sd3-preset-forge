@@ -1,0 +1,13 @@
+defaultpad {
+  usemic Oh-Beyer Oh-BeyerR Ambience-R88 Ambience-R88R
+  cycle S
+}
+
+TEMPLATE BleedAll
+  usemic SnareBottom SnareBottomR Oh-Beyer Oh-BeyerR Ambience-R88 Ambience-R88R
+END
+
+pad kickR {
+  usemic Kick-In Kick-Out Kick-Sub
+  USE BleedAll
+}

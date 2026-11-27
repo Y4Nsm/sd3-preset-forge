@@ -1,0 +1,291 @@
+metadata:
+  preset_id: "alice-in-chains-facelift"
+  genre: "grunge"
+  reference_artist: "Alice In Chains (Sean Kinney / Dave Jerden)"
+  reference_album: "Facelift (1990)"
+  mix_mode: "internal_sd3"
+  schema_version: "2.0"
+  max_warnings: 1
+
+safety:
+  true_peak_dbfs:
+    min: -10.0
+    max: -0.5
+    ideal: -1.5
+    unit: "dBFS"
+    severity: "hard"
+    hint_low: "Raise Output 1/2 fader or Comp 670 output gain."
+    hint_high: "Lower Output 1/2 fader or Limiter threshold to avoid clipping."
+  clipping_samples:
+    min: 0
+    max: 0
+    ideal: 0
+    unit: "samples"
+    severity: "hard"
+    hint_high: "Reduce Output 1/2 gain."
+  lr_balance_db:
+    min: -1.5
+    max: 1.5
+    ideal: 0.0
+    unit: "dB"
+    severity: "hard"
+  kick_stereo_correlation:
+    min: 0.80
+    max: 1.0
+    ideal: 0.96
+    unit: "r"
+    severity: "hard"
+  snare_stereo_correlation:
+    min: 0.55
+    max: 1.0
+    ideal: 0.80
+    unit: "r"
+    severity: "hard"
+  groove_stereo_correlation:
+    min: 0.25
+    max: 0.90
+    ideal: 0.62
+    unit: "r"
+    severity: "hard"
+
+kick:
+  fundamental_hz:
+    min: 46.0
+    max: 62.0
+    ideal: 54.0
+    unit: "Hz"
+    severity: "hard"
+    hint_low: "Raise KickR pitch_semitones."
+    hint_high: "Lower KickR pitch_semitones."
+  sub_30_70_db:
+    min: -9.5
+    max: -1.0
+    ideal: -3.5
+    unit: "dB"
+    severity: "hard"
+  punch_70_130_db:
+    min: -12.0
+    max: -2.0
+    ideal: -5.5
+    unit: "dB"
+    severity: "warn"
+  boxiness_250_550_db:
+    min: -38.0
+    max: -10.5
+    ideal: -19.0
+    unit: "dB"
+    severity: "warn"
+  click_3000_6000_db:
+    min: -28.0
+    max: -8.0
+    ideal: -16.0
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.5
+    unit: "dB"
+    severity: "hard"
+  active_crest_factor_db:
+    min: 9.0
+    max: 21.0
+    ideal: 14.5
+    unit: "dB"
+    severity: "hard"
+  decay_t20_ms:
+    min: 150.0
+    max: 520.0
+    ideal: 300.0
+    unit: "ms"
+    severity: "warn"
+  drr_db:
+    min: 1.5
+    max: 14.0
+    ideal: 6.0
+    unit: "dB"
+    severity: "warn"
+  double_kick_clarity_db:
+    min: 5.5
+    max: 24.0
+    ideal: 13.5
+    unit: "dB"
+    severity: "hard"
+  velocity_dynamic_range_db:
+    min: 4.0
+    max: 18.0
+    ideal: 7.0
+    unit: "dB"
+    severity: "warn"
+
+snare_center:
+  fundamental_hz:
+    min: 178.0
+    max: 214.0
+    ideal: 196.0
+    unit: "Hz"
+    severity: "hard"
+    hint_low: "Raise Snare pitch_semitones."
+    hint_high: "Lower Snare pitch_semitones."
+  ring_prominence_db:
+    min: 3.0
+    max: 18.0
+    ideal: 10.5
+    unit: "dB"
+    severity: "warn"
+  crack_2000_5000_db:
+    min: -20.0
+    max: -3.5
+    ideal: -10.5
+    unit: "dB"
+    severity: "warn"
+  wire_sizzle_7000_14000_db:
+    min: -28.0
+    max: -7.0
+    ideal: -15.0
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.5
+    unit: "dB"
+    severity: "hard"
+  active_crest_factor_db:
+    min: 9.0
+    max: 21.0
+    ideal: 16.0
+    unit: "dB"
+    severity: "hard"
+  decay_t30_ms:
+    min: 240.0
+    max: 820.0
+    ideal: 500.0
+    unit: "ms"
+    severity: "warn"
+  drr_db:
+    min: -2.5
+    max: 10.0
+    ideal: 2.0
+    unit: "dB"
+    severity: "warn"
+  velocity_dynamic_range_db:
+    min: 4.0
+    max: 18.0
+    ideal: 7.0
+    unit: "dB"
+    severity: "warn"
+
+snare_rimshot:
+  fundamental_hz:
+    min: 178.0
+    max: 218.0
+    ideal: 198.0
+    unit: "Hz"
+    severity: "hard"
+  ring_prominence_db:
+    min: 3.5
+    max: 18.5
+    ideal: 11.5
+    unit: "dB"
+    severity: "warn"
+  crack_2000_5000_db:
+    min: -18.0
+    max: -2.5
+    ideal: -9.5
+    unit: "dB"
+    severity: "warn"
+  crest_factor_db:
+    min: 9.0
+    max: 22.0
+    ideal: 14.5
+    unit: "dB"
+    severity: "hard"
+
+toms:
+  pitch_order_valid:
+    ideal: true
+    unit: "bool"
+    severity: "hard"
+    hint_low: "Ensure 3 loaded toms descend in frequency (Tom1 > Tom4 > Tom5)."
+  pan_order_valid:
+    ideal: true
+    unit: "bool"
+    severity: "hard"
+    hint_low: "Ensure 3 loaded toms pan monotonically left to right."
+
+cymbals:
+  harshness_ratio_db:
+    min: -12.0
+    max: 3.0
+    ideal: -2.0
+    unit: "dB"
+    severity: "warn"
+  cymbals_stereo_width:
+    min: 0.30
+    max: 1.35
+    ideal: 0.80
+    unit: "width"
+    severity: "warn"
+  choke_attenuation_db:
+    min: 6.0
+    max: 35.0
+    ideal: 12.0
+    unit: "dB"
+    severity: "warn"
+
+groove:
+  sub_20_60_db:
+    min: -20.0
+    max: -4.0
+    ideal: -9.5
+    unit: "dB"
+    severity: "warn"
+  low_60_150_db:
+    min: -15.0
+    max: -3.0
+    ideal: -7.0
+    unit: "dB"
+    severity: "warn"
+  low_mid_150_500_db:
+    min: -20.0
+    max: -6.0
+    ideal: -11.5
+    unit: "dB"
+    severity: "warn"
+  high_mid_2000_6000_db:
+    min: -20.0
+    max: -5.5
+    ideal: -11.5
+    unit: "dB"
+    severity: "warn"
+  groove_crest_factor_db:
+    min: 7.5
+    max: 19.0
+    ideal: 11.5
+    unit: "dB"
+    severity: "hard"
+  active_crest_factor_db:
+    min: 7.5
+    max: 19.0
+    ideal: 13.0
+    unit: "dB"
+    severity: "hard"
+  integrated_lufs:
+    min: -25.0
+    max: -12.0
+    ideal: -19.5
+    unit: "LUFS"
+    severity: "warn"
+  lra_lu:
+    min: 1.0
+    max: 8.0
+    ideal: 3.0
+    unit: "LU"
+    severity: "warn"
+  kick_to_snare_peak_diff_db:
+    min: -4.5
+    max: 4.5
+    ideal: 0.0
+    unit: "dB"
+    severity: "warn"

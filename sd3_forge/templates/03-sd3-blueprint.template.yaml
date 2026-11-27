@@ -1,0 +1,99 @@
+schema_version: "2.0"
+
+metadata:
+  preset_id: "{{PRESET_ID}}"
+  genre: "{{GENRE}}"
+  reference: "Artist - Album (Year)"
+
+mix_mode: "internal_sd3"
+
+preflight_audit:
+  envelope_ahdsr_checked: true
+  fx_bands_checked: true
+  unused_slots_resolved: true
+  part1_mics_only: true
+  raw_baseline_planned: true
+
+kit:
+  base_kit: "Pearl Masterworks"
+  unload_slots:
+    - "Tom3"
+    - "Cymbal1"
+    - "Cymbal2"
+    - "Cymbal3"
+    - "Cymbal4"
+    - "Cymbal5"
+    - "Cymbal6"
+  pieces:
+    - slot: "KickR"
+      name: '18x22" Pearl Masterworks'
+      pitch_semitones: 0.0
+      envelope:
+        attack_ms: 0
+        decay_ms: 420
+    - slot: "Snare"
+      name: '6.5x14" Tama Bell Brass'
+      pitch_semitones: 0.0
+      envelope:
+        attack_ms: 0
+    - slot: "Hats"
+      name: '15" Paiste 2002 Extra Heavy'
+      pitch_semitones: 0.0
+    - slot: "Tom1"
+      name: '8x10" Pearl Masterworks'
+      pitch_semitones: 0.0
+    - slot: "Tom2"
+      name: '9x12" Pearl Masterworks'
+      pitch_semitones: 0.0
+    - slot: "Tom4"
+      name: '15x16" Pearl Masterworks'
+      pitch_semitones: 0.0
+    - slot: "Tom5"
+      name: '16x18" Pearl Masterworks'
+      pitch_semitones: 0.0
+
+mics:
+  - channel: "Kick In"
+    fader_db: 0.0
+    pan: "C"
+    phase_invert: false
+    route_to: "Output 1/2"
+    inserts: []
+  - channel: "Snare Top"
+    fader_db: 0.0
+    pan: "C"
+    phase_invert: false
+    route_to: "Output 1/2"
+    inserts: []
+  - channel: "OH Dyn"
+    fader_db: -3.0
+    pan: "L100/R100"
+    route_to: "Output 1/2"
+    inserts: []
+  - channel: "Amb Ribbon"
+    fader_db: -6.0
+    pan: "L100/R100"
+    route_to: "Output 1/2"
+    inserts: []
+
+bleed:
+  channels:
+    - channel: "Snare Bottom"
+      enabled: true
+      level_db: -8.0
+      sources: ["Kick", "Toms"]
+    - channel: "OH Dyn"
+      enabled: true
+      level_db: 0.0
+      sources: ["All"]
+    - channel: "Amb Ribbon"
+      enabled: true
+      level_db: 0.0
+      sources: ["All"]
+
+buses: []
+
+master_bus:
+  channel: "Output 1/2"
+  fader_db: 0.0
+  inserts: []

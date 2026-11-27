@@ -1,0 +1,7 @@
+Product "Superior Drummer 3"
+
+name "Snare Center"
+{
+  prio 1
+  note 38
+}

@@ -1,0 +1,54 @@
+mic {
+  name Kick-Sub
+  mixname "Kick Sub"
+  bouncename "Kick_Sub"
+  pan 0.5
+  volume 0.8
+}
+mic {
+  name SnareTop
+  mixname "Snare Top"
+  bouncename "Snare_Top"
+  pan 0.5
+  volume 0.9
+}
+mic {
+  name OH-Wide
+  mixname "OH Wide"
+  bouncename "OH_Wide"
+  pan 0
+  volume 0.7
+  stereo
+  bleedcontrol
+}
+mic {
+  name OH-WideR
+  pan 1
+  volume 0.7
+  stereo
+  bleedcontrol
+}
+mic {
+  name Room-A
+  mixname "Room A"
+  bouncename "Room_A"
+  pan 0
+  volume 0.6
+  stereo
+  bleedcontrol
+  ambientoffset
+  roomtime 0.08
+}
+mic {
+  name Room-AR
+  pan 1
+  volume 0.6
+  stereo
+  bleedcontrol
+  ambientoffset
+  roomtime 0.08
+}
+mic {
+  name dummy
+  dummy
+}

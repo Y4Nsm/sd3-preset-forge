@@ -1,0 +1,91 @@
+positions {
+  KickR 1 {
+    description "Kick"
+    close Kick-In
+    close Kick-Out
+    close Kick-Sub
+    Kick73 KD73 "18x22^ Pearl Masterworks"
+    Kick1 KD01 "16x24^ Gretsch Round Badge"
+  }
+  Snare 2 {
+    description "Snare"
+    close SnareTop
+    close SnareBottom
+    Snare13 SD13 "6.5x14^ Tama Bell Brass"
+    Snare20 SD20 "6.5x14^ Ludwig Black Beauty"
+  }
+  Hats 3 {
+    description "Hi-Hat"
+    close Hats
+    Hats4 HA04 "15^ Paiste 2002 Extra Heavy"
+  }
+  Tom1 4 {
+    description "Racktom 1"
+    close Tom1
+    Tom3-1 TO03 "8x10^ Pearl Masterworks"
+  }
+  Tom2 5 {
+    description "Racktom 2"
+    close Tom2
+    Tom3-2 TO03 "9x12^ Pearl Masterworks"
+  }
+  Tom3 6 {
+    description "Racktom 3"
+    close Tom3
+    Tom3-3 TO03 "10x13^ Pearl Masterworks"
+  }
+  Tom4 7 {
+    description "Floortom 1"
+    close Tom4
+    Tom3-5 TO03 "15x16^ Pearl Masterworks"
+  }
+  Tom5 8 {
+    description "Floortom 2"
+    close Tom5
+    Tom3-6 TO03 "16x18^ Pearl Masterworks"
+  }
+  Cymbal1 9 {
+    description "Cymbal 1"
+    cymbal7_1 CR07 "17^ Paiste 2002 Medium Crash"
+  }
+  Cymbal2 10 {
+    description "Cymbal 2"
+    cymbal3_2 CR03 "20^ Paiste 2002 Medium Crash/Ride"
+  }
+  Cymbal3 11 {
+    description "Cymbal 3"
+    cymbal7_3 CR07 "10^ Paiste 3000 Splash"
+  }
+  Cymbal4 12 {
+    description "Ride"
+    cymbal2_4 CR02 "22^ Zildjian K Constantinople Medium Thin Low Ride"
+  }
+  Cymbal5 13 {
+    description "Cymbal 4"
+    cymbal7_5 CR07 "18^ Paiste 2002 Medium Crash"
+  }
+  Cymbal6 14 {
+    description "Cymbal 5"
+    cymbal7_6 CR07 "18^ Paiste 3000 Nuovo China"
+  }
+}
+
+drumsets {
+  "Pearl Masterworks" {
+    sticks "Drumsticks"
+    KickR Kick73
+    Snare Snare13
+    Hats Hats4
+    Tom1 Tom3-1
+    Tom2 Tom3-2
+    Tom3 Tom3-3
+    Tom4 Tom3-5
+    Tom5 Tom3-6
+    Cymbal1 cymbal7_1
+    Cymbal2 cymbal3_2
+    Cymbal3 cymbal7_3
+    Cymbal4 cymbal2_4
+    Cymbal5 cymbal7_5
+    Cymbal6 cymbal7_6
+  }
+}

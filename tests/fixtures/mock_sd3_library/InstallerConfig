@@ -1,0 +1,31 @@
+TEMPLATE OBW-File
+  File {
+    FileName "SL-SUPERIOR_DRUMMER_3/Sounds/soundb$1.obw"
+  }
+END
+
+Option {
+  Name "Basic Setup - All Tools"
+  DefaultOption
+  USE OBW-File 1
+}
+
+Option {
+  Name "Stereo Room Setup"
+  USE OBW-File 24
+}
+
+Option {
+  Name "Surround Setup"
+  USE OBW-File 53
+}
+
+Option {
+  Name "Height Surround Setup"
+  USE OBW-File 79
+}
+
+Option {
+  Name "All tools, mics and bleed"
+  USE OBW-File 114
+}

@@ -1,0 +1,72 @@
+schema_version: "1.0.0"
+
+ui_conventions:
+  tuning_format: "octave:semitones.tenths (ex: 0:02.7 = +2.7 semitons)"
+  buses_available: "Bus 1..Bus 32 (aparecem na direita do Mixer assim que um canal ou send aponta para eles)"
+  mixer_flow: "Left-to-Right: Mic Channels -> Buses -> Out 1/2"
+
+effects:
+  Transient:
+    verification_status: "verified_in_ui"
+    source: "Relato direto da UI do usuário no SD3"
+    params:
+      Attack:
+        unit: "dB"
+        min: -15.0
+        max: 15.0
+        forbidden_units: ["%"]
+      Sustain:
+        unit: "dB"
+        min: -24.0
+        max: 24.0
+        forbidden_units: ["%"]
+
+  EQ84:
+    verification_status: "verified_in_ui"
+    source: "Manual oficial Toontrack SD3 (3 bandas contínuas + HPF/LPF)"
+    forbidden_keys: ["LowMid", "HighMid"]
+    allowed_band_keys: ["HPF", "LPF", "Low", "Mid", "High", "HiQ", "InOut"]
+
+  Comp 76:
+    verification_status: "verified_in_ui"
+    source: "Manual oficial Toontrack SD3"
+    params:
+      Attack:
+        unit: "scale"
+        min: 1.0
+        max: 7.0
+        note: "1 = mais rápido, 7 = mais lento"
+      Release:
+        unit: "scale"
+        min: 1.0
+        max: 7.0
+        note: "1 = mais rápido, 7 = mais lento"
+      Ratio:
+        allowed_values: ["4:1", "8:1", "12:1", "20:1", "All"]
+
+  Valve Distortion Box:
+    verification_status: "manual_only"
+    note: "Low Pass Filter verificado (Off / 4 kHz / 7 kHz); Overdrive/Drive informar posição relativa do knob até confirmação da UI."
+    params:
+      LowPassFilter:
+        allowed_values: ["Off", "4 kHz", "7 kHz"]
+
+  Tape Simulator:
+    verification_status: "manual_only"
+    note: "Informar posição relativa do knob (ex: ~25% do curso) até leitura exata da UI."
+
+  Punch Exciter 361:
+    verification_status: "manual_only"
+    note: "VocalMod é On/Off; Compression e Mix informar posição relativa/visual do knob."
+
+  Room Reverb:
+    verification_status: "manual_only"
+    note: "PreDelay em ms, ReverbTime/Decay em s ou ms (ícone relógio), DryWet em %."
+
+  Frequency Gate:
+    verification_status: "manual_only"
+    note: "Threshold em dB, Attack/Hold/Release em ms, SideChain_HPF em Hz."
+
+  Comp 670:
+    verification_status: "manual_only"
+    note: "Calibrar pelo medidor de Gain Reduction (GR em dB)."

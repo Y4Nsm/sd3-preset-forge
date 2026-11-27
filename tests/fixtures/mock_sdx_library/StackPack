@@ -1,0 +1,6 @@
+positions {
+  KickStack 1 {
+    description "Kicks"
+    st_k1 SP01 "Synthetic Punch Kick"
+  }
+}

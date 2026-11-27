@@ -1,0 +1,11 @@
+TEMPLATE DefaultRoom
+  usemic SnareTop OH-Wide OH-WideR Room-A Room-AR
+END
+
+defaultpad {
+  USE DefaultRoom
+}
+
+pad crash1 {
+  usemic OH-Wide OH-WideR Room-A Room-AR
+}
