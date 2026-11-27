@@ -45,10 +45,13 @@ jobs:
         shell: bash
         run: |
           python -m venv "${RUNNER_TEMP}/clean-venv"
-          "${RUNNER_TEMP}/clean-venv/bin/python" -m pip install --no-build-isolation . 2>/dev/null || \
-            "${RUNNER_TEMP}/clean-venv/Scripts/python.exe" -m pip install --no-build-isolation .
+          if [ -x "${RUNNER_TEMP}/clean-venv/bin/python" ]; then
+            VENV_BIN="${RUNNER_TEMP}/clean-venv/bin"
+          else
+            VENV_BIN="${RUNNER_TEMP}/clean-venv/Scripts"
+          fi
+          "${VENV_BIN}/python" -m pip install --upgrade pip
+          "${VENV_BIN}/python" -m pip install .
           cd "${RUNNER_TEMP}"
-          "${RUNNER_TEMP}/clean-venv/bin/sd3-forge" --help 2>/dev/null || \
-            "${RUNNER_TEMP}/clean-venv/Scripts/sd3-forge.exe" --help
-          "${RUNNER_TEMP}/clean-venv/bin/sd3-forge-mcp" --list-tools >/dev/null 2>&1 || \
-            "${RUNNER_TEMP}/clean-venv/Scripts/sd3-forge-mcp.exe" --list-tools >/dev/null
+          "${VENV_BIN}/sd3-forge" --help
+          "${VENV_BIN}/sd3-forge-mcp" --list-tools >/dev/null
