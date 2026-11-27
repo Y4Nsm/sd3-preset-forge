@@ -2,13 +2,14 @@
 
 [English](README.md) | **Português (Brasil)**
 
-Ferramenta determinística e orientada a TDD para engenharia de presets do **Toontrack Superior Drummer 3**, criada para agentes autônomos de IA (**Claude Code, Cursor, Codex, Antigravity**) e engenheiros de mixagem.
+Ferramenta CLI open-source e motor de calibração DSP para o **Toontrack Superior Drummer 3**. Escreva blueprints legíveis em YAML, compile direto em presets nativos `.sd3p`, renderize bounces de teste usando seu `Superior Drummer 3.vst3` local e audite afinação, decaimento, ring de caixa e harshness de pratos.
 
-- **Consulta Compacta de Ground Truth (`sd3-forge inventory`):** Extrai e filtra peças de bateria, microfones instalados, stacks, keymaps e todos os 35 efeitos nativos (`effect 10..44`) da sua instalação sem inflar o contexto da IA.
+- **Inventário da Biblioteca Local (`sd3-forge inventory`):** Escaneia e filtra peças de bateria, microfones instalados, stacks, keymaps e todos os 35 efeitos nativos do SD3 (`effect 10..44`) diretamente da sua instalação local.
 - **Typed IR v2 e Compilador `.sd3p` Sem Perdas:** Valida blueprints Pydantic v2 (`schema_version: "2.0"`) e compila diretamente em presets nativos `.sd3p`.
 - **Worker VST3 Persistente e Calibrador Analítico:** Mantém `Superior Drummer 3.vst3` residente via `sd3-forge daemon`, verifica os slots carregados com canário pré-voo e calibra afinação + cortes/balanço espectral com rollback automático via `.forge-history/` (`sd3-forge calibrate`).
-- **Motor DSP v2 Anti-Goodhart:** Audita bounces com decaimento Schroeder ISO 3382, frequência fundamental, picos de ring da caixa, harshness por prato, ordem de pitch/pan dos tons e loudness ITU-R BS.1770-4 (`test-report.json`, `test-report.md`, `diagnostic-plots.png`).
-- Consulte [AGENTS.md](AGENTS.md) para o fluxo de agentes e [docs/ROADMAP.md](docs/ROADMAP.md) para a arquitetura completa.
+- **Motor de Auditoria DSP Offline (`dsp_metrics.py`):** Audita bounces com decaimento Schroeder EDC (com corte de piso de ruído estilo Lundeby), frequência fundamental, picos de ring de caixa/tons, harshness por prato, ordem de pitch/pan dos tons e loudness ITU-R BS.1770-4 (`test-report.json`, `test-report.md`, `diagnostic-plots.png`).
+- **Exemplos da Core Library Incluídos:** Kits prontos usando apenas o mixer interno do SD3 em `presets/` (Deftones *Around the Fur* e Alice In Chains *Facelift*). Sem geração de áudio por IA e sem nenhum sample da Toontrack.
+- Consulte [docs/ROADMAP.md](docs/ROADMAP.md) para a arquitetura completa, ou [AGENTS.md](AGENTS.md) caso queira acionar o CLI opcionalmente via agentes de código / MCP.
 
 ---
 
@@ -73,7 +74,7 @@ Variáveis de ambiente opcionais (detectadas automaticamente por padrão no Wind
 
 ---
 
-## Servidor MCP (`sd3-forge-mcp`) e Skill para Claude Code
+## Automação Opcional: Servidor MCP (`sd3-forge-mcp`) e Skill para Agentes
 
 O `sd3-preset-forge` inclui uma Skill para Claude Code ([.claude/skills/sd3-forge/SKILL.md](.claude/skills/sd3-forge/SKILL.md)) e um servidor MCP opcional de 6 ferramentas via stdio (`sd3-forge-mcp`):
 

@@ -2,13 +2,14 @@
 
 **English** | [Português (Brasil)](README.pt-BR.md)
 
-Deterministic, TDD-driven preset engineering forge for **Toontrack Superior Drummer 3**, built for autonomous AI coding agents (**Claude Code, Cursor, Codex, Antigravity**) and human mix engineers.
+Open-source CLI and DSP calibration toolkit for **Toontrack Superior Drummer 3**. Author readable YAML drum-kit blueprints, compile them straight into native `.sd3p` presets, render test bounces through your local `Superior Drummer 3.vst3`, and audit pitch, decay, snare ring, and cymbal harshness.
 
-- **Compact Ground Truth Querying (`sd3-forge inventory`):** Extracts and filters local kit pieces, installed mics, stacks, keymaps, and all 35 native FX (`effect 10..44`) without bloating agent context.
+- **Local Library Inventory (`sd3-forge inventory`):** Scans and filters your installed kit pieces, mics, stacks, keymaps, and all 35 native SD3 FX (`effect 10..44`) directly from your local installation.
 - **Typed IR v2 & Lossless `.sd3p` Compiler:** Validates Pydantic v2 blueprints (`schema_version: "2.0"`) and compiles losslessly into `.sd3p` presets.
 - **Persistent VST3 Worker & Analytical Calibrator:** Keeps `Superior Drummer 3.vst3` resident via `sd3-forge daemon`, verifies loaded slots with a pre-flight canary, and calibrates pitch + spectral/balance trims with `.forge-history/` auto-rollback (`sd3-forge calibrate`).
-- **Anti-Goodhart DSP Engine v2:** Scores bounces across ISO 3382 Schroeder decay, fundamental pitch, snare ring peaks, per-cymbal harshness, tom pitch/pan ordering, and ITU-R BS.1770-4 loudness (`test-report.json`, `test-report.md`, `diagnostic-plots.png`).
-- See [AGENTS.md](AGENTS.md) for the agent workflow and [docs/ROADMAP.md](docs/ROADMAP.md) for the full architecture.
+- **Offline DSP Audit Engine (`dsp_metrics.py`):** Scores bounces across Schroeder EDC decay (with Lundeby-style noise-floor cutoff), fundamental pitch, snare/tom ring peaks, per-cymbal harshness, tom pitch/pan ordering, and ITU-R BS.1770-4 loudness (`test-report.json`, `test-report.md`, `diagnostic-plots.png`).
+- **Included Core Library Examples:** Ready-to-compile internal-mixer kits under `presets/` (Deftones *Around the Fur* and Alice In Chains *Facelift*). No AI audio generation and no Toontrack samples included.
+- See [docs/ROADMAP.md](docs/ROADMAP.md) for the full architecture, or [AGENTS.md](AGENTS.md) if driving the CLI from optional coding agents / MCP.
 
 ---
 
@@ -73,7 +74,7 @@ Environment overrides (optional, auto-detected on Windows & macOS by default):
 
 ---
 
-## MCP Server (`sd3-forge-mcp`) & Claude Code Skill
+## Optional Automation: MCP Server (`sd3-forge-mcp`) & Agent Skill
 
 `sd3-preset-forge` ships both a Claude Code Skill ([.claude/skills/sd3-forge/SKILL.md](.claude/skills/sd3-forge/SKILL.md)) and an optional zero-overhead 6-tool stdio MCP server (`sd3-forge-mcp`):
 
